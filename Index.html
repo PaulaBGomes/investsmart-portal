@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestSmart - Portal de Investimentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">💰 InvestSmart</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="showSection('home')">Início</a></li>
+                <li><a onclick="showSection('calculator')">Calculadora</a></li>
+                <li><a onclick="showSection('quotes')">Cotações</a></li>
+                <li><a onclick="showSection('education')">Educação</a></li>
+                <li><a onclick="showSection('quiz')">Quiz</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Página Inicial -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Bem-vindo ao InvestSmart</h1>
+                <p>Sua jornada para o sucesso financeiro começa aqui!</p>
+                <p>Aprenda sobre investimentos e construa seu futuro financeiro.</p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>📊 Ferramentas</h3>
+                    <div class="number">5+</div>
+                    <p>Calculadoras e Simuladores</p>
+                </div>
+                <div class="card">
+                    <h3>🎓 Educação</h3>
+                    <div class="number">100%</div>
+                    <p>Conteúdo Gratuito</p>
+                </div>
+                <div class="card">
+                    <h3>📈 Resultados</h3>
+                    <div class="number">∞</div>
+                    <p>Potencial de Crescimento</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora -->
+        <section id="calculator" class="section">
+            <h2>📊 Calculadora de Investimentos</h2>
+            <div class="form-box">
+                <h3>Simule seu Investimento</h3>
+                
+                <div class="form-group">
+                    <label>Valor Inicial (R$):</label>
+                    <input type="number" id="valorInicial" placeholder="1000">
+                </div>
+                
+                <div class="form-group">
+                    <label>Aporte Mensal (R$):</label>
+                    <input type="number" id="aporteMenual" placeholder="500">
+                </div>
+                
+                <div class="form-group">
+                    <label>Taxa Anual (%):</label>
+                    <input type="number" id="taxaAnual" placeholder="10">
+                </div>
+                
+                <div class="form-group">
+                    <label>Tempo (Anos):</label>
+                    <input type="number" id="tempo" placeholder="5">
+                </div>
+                
+                <button class="btn" onclick="calcular()">Calcular</button>
+                
+                <div id="resultado"></div>
+            </div>
+        </section>
+
+        <!-- Cotações -->
+        <section id="quotes" class="section">
+            <h2>💹 Cotações do Mercado</h2>
+            <p>Acompanhe as principais cotações (valores simulados):</p>
+            
+            <div class="quotes-grid" id="cotacoes"></div>
+            
+            <button class="btn" onclick="atualizarCotacoes()">🔄 Atualizar</button>
+        </section>
+
+        <!-- Educação -->
+        <section id="education" class="section">
+            <h2>🎓 Educação Financeira</h2>
+            
+            <div class="form-box">
+                <h3>💡 Conceitos Básicos</h3>
+                <p><strong>Renda Fixa:</strong> Investimentos com rentabilidade previsível (Tesouro, CDB).</p>
+                <p><strong>Renda Variável:</strong> Investimentos com rentabilidade não garantida (Ações, Fundos).</p>
+                <p><strong>Diversificação:</strong> Distribuir investimentos para reduzir riscos.</p>
+                <p><strong>Juros Compostos:</strong> Juros sobre juros que aceleram o crescimento.</p>
+            </div>
+
+            <div class="form-box">
+                <h3>🎯 Dicas para Iniciantes</h3>
+                <ul>
+                    <li>Comece pela reserva de emergência</li>
+                    <li>Conheça seu perfil de investidor</li>
+                    <li>Diversifique seus investimentos</li>
+                    <li>Invista regularmente</li>
+                    <li>Estude antes de investir</li>
+                    <li>Tenha paciência</li>
+                </ul>
+            </div>
+
+            <div class="form-box">
+                <h3>⚠️ Erros a Evitar</h3>
+                <ul>
+                    <li>Não ter objetivos claros</li>
+                    <li>Colocar todos os ovos na mesma cesta</li>
+                    <li>Seguir dicas sem estudar</li>
+                    <li>Investir dinheiro de emergência</li>
+                    <li>Tomar decisões emocionais</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz" class="section">
+            <h2>🧠 Quiz Educativo</h2>
+            <div class="quiz-box">
+                <h3>Teste seus conhecimentos!</h3>
+                <div id="perguntas"></div>
+                <button class="btn" onclick="verificarRespostas()" id="btnQuiz" style="display: none;">Ver Resultado</button>
+                <div id="resultadoQuiz"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
